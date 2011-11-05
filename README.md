@@ -20,15 +20,15 @@ This plugin assumes you have working knowledge of Sphinx and SphinxQL. There are
 4. Each Sphinx index corresponds to a model. In the Sphinx config file, set up a test suite index for yourself as follows:
 	index sphinx_tests
 	{
-		type			= rt
-		rt_mem_limit	= 512M
+	type			= rt
+	rt_mem_limit	= 512M
 
-		path			= /path/to/data/sphinx_tests
-		charset_type	= utf-8
+	path			= /path/to/data/sphinx_tests
+	charset_type	= utf-8
 
-		rt_field		= description
-		rt_attr_string	= name
-		rt_attr_uint	= foreign_id
+	rt_field		= description
+	rt_attr_string	= name
+	rt_attr_uint	= foreign_id
 	}
 5. Set up any custom indexes you need for your app in a similar fashion (note that the index name is an underscored, pluralized version of your model name).
 
@@ -38,15 +38,15 @@ This plugin assumes you have working knowledge of Sphinx and SphinxQL. There are
 
 Each index should have a corresponding model, keeping the following in mind:
 
-	5a. A Sphinx model file should include `SphinxAppModel`:
-		`App::import('Model', 'Sphinx.SphinxAppModel');`
-		It should then extend itself off of that:
-		`class MySphinxModel extends SphinxAppModel {`
-	5b. The `$_full_text_indexes' property should be defined. This is an array of fields that are Sphinx full-text indexes.
-	5c. The `$_attributes` property should be defined. This is an array of fields that are Sphinx attributes.
-	5d. The `$_schema` property should be defined. This is a standard CakePHP schema array and should contain the `id` field plus any other full-text indexes and/or attributes you are using.
+5a. A Sphinx model file should include `SphinxAppModel`:
+	`App::import('Model', 'Sphinx.SphinxAppModel');`
+	It should then extend itself off of that:
+	`class MySphinxModel extends SphinxAppModel {`
+5b. The `$_full_text_indexes' property should be defined. This is an array of fields that are Sphinx full-text indexes.
+5c. The `$_attributes` property should be defined. This is an array of fields that are Sphinx attributes.
+5d. The `$_schema` property should be defined. This is a standard CakePHP schema array and should contain the `id` field plus any other full-text indexes and/or attributes you are using.
 
-	An example model can be found in the test suite: `tests/cases/models/datasources/sphinx_source.test.php`
+An example model can be found in the test suite: `tests/cases/models/datasources/sphinx_source.test.php`
 
 ### CRUD Operations
 
