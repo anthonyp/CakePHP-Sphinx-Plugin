@@ -18,18 +18,20 @@ This plugin assumes you have working knowledge of Sphinx and SphinxQL. There are
 2. Move or copy the extracted directory anthonyp-CakePHP-Sphinx-Plugin-[hash] to /path/to/your/app/plugins/sphinx
 3. Sphinx creates a database config for itself named `sphinx`. By default, it connects to port 9306 on localhost with no username or password. If you would like to change this behavior, simply override those settings in your `database.php` file using a config named `sphinx`.
 4. Each Sphinx index corresponds to a model. In the Sphinx config file, set up a test suite index for yourself as follows:
+	`
 	index sphinx_tests
 	{
-	type			= rt
-	rt_mem_limit	= 512M
+		type			= rt
+		rt_mem_limit	= 512M
 
-	path			= /path/to/data/sphinx_tests
-	charset_type	= utf-8
+		path			= /path/to/data/sphinx_tests
+		charset_type	= utf-8
 
-	rt_field		= description
-	rt_attr_string	= name
-	rt_attr_uint	= foreign_id
+		rt_field		= description
+		rt_attr_string	= name
+		rt_attr_uint	= foreign_id
 	}
+	`
 5. Set up any custom indexes you need for your app in a similar fashion (note that the index name is an underscored, pluralized version of your model name).
 
 ## Instructions / Usage
