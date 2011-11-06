@@ -39,9 +39,13 @@ This plugin assumes you have working knowledge of Sphinx and SphinxQL. There are
 Each index should have a corresponding model, keeping the following in mind:
 
 1. A Sphinx model file should include `SphinxAppModel`:
+
 	`App::import('Model', 'Sphinx.SphinxAppModel');`
+
 	It should then extend itself off of that:
-	`class MySphinxModel extends SphinxAppModel {`
+
+	`class MySphinxModel extends SphinxAppModel`
+
 2. The `$_full_text_indexes' property should be defined. This is an array of fields that are Sphinx full-text indexes.
 3. The `$_attributes` property should be defined. This is an array of fields that are Sphinx attributes.
 4. The `$_schema` property should be defined. This is a standard CakePHP schema array and should contain the `id` field plus any other full-text indexes and/or attributes you are using.
