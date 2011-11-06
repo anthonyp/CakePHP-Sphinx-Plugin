@@ -46,7 +46,7 @@ Each index should have a corresponding model, keeping the following in mind:
 
 	`class MySphinxModel extends SphinxAppModel`
 
-2. The `$_full_text_indexes' property should be defined. This is an array of fields that are Sphinx full-text indexes.
+2. The `$_full_text_indexes` property should be defined. This is an array of fields that are Sphinx full-text indexes.
 3. The `$_attributes` property should be defined. This is an array of fields that are Sphinx attributes.
 4. The `$_schema` property should be defined. This is a standard CakePHP schema array and should contain the `id` field plus any other full-text indexes and/or attributes you are using.
 
@@ -58,7 +58,7 @@ All CRUD operations can be used as expected to interact with an index. For the m
 
 #### Full-Text Searching
 
-Full-text searching can be accomplished using MATCH, like so:
+Full-text searching can be accomplished using `MATCH`, like so:
 
 		$this->SphinxExample->find('all', array(
 			'conditions' => array(
